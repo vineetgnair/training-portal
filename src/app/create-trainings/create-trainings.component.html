@@ -1,0 +1,90 @@
+
+<div class="container">
+    <div class="row">
+        
+    </div>  
+    <div class="row">
+        <div class="wrapper md">
+            <h1 class="heading">Create Training</h1>
+            <form [formGroup]="createTrainingForm" (ngSubmit)="onSubmit()">
+                <div class="form-row">
+                    <label> Training Name: <span class="mandatory">*</span></label>
+                    <input type="text" formControlName="trainingName" placeholder="Training on Angular Framework" required />
+                    
+                </div>
+                
+                <div class="form-row">
+                    <label>Training Description:</label>
+                    <textarea type="text" formControlName="trainingDescription" placeholder="Intro about the training session...."></textarea>
+                </div>       
+                
+                <div class="form-row">
+                    <label>Training Department: <span class="mandatory">*</span></label>
+                    <input type="text" formControlName="trainingDept" placeholder="Engineering | Accounts | HR" required/>
+                    
+                    <!-- <div *ngIf="formControlsValidation.trainingDept.invalid && (formControlsValidation.trainingDept.touched || formControlsValidation.trainingDept.dirty)">
+                        show this
+                    </div> -->
+                </div>        
+                
+                <div class="form-row">
+                    <label>Training Duration: <span class="mandatory">*</span></label>
+                    <div class="flex-box">
+                        <div class="col">
+                            <label>
+                                <input type="number" formControlName="trainingDurationHours" placeholder="2 hours" required>
+                            </label>    
+                        </div>    
+                        <div class="col">
+                            <label>
+                                <input type="number" formControlName="trainingDurationMinutes" placeholder="20 minutes" required>
+                            </label>     
+                        </div>  
+                    </div>
+                </div>
+            
+                <div class="form-row">
+                    <label> Training Date: <span class="mandatory">*</span></label>
+                    <input type="date" formControlName="trainingDate" placeholder="Training Date" required />
+                </div>
+
+                <div class="form-row">
+                    <label>Training Time: <span class="mandatory">*</span></label>
+                    <div class="flex-box">
+                        <div class="col">
+                            <input class="sm" type="number" formControlName="trainingStartHours" placeholder="Starts at 10 hours" required />
+                        </div>
+                        <div class="col">
+                            <input class="sm" type="number" formControlName="trainingStartMinutes" placeholder="30 Minutes" required>
+                        </div>
+                        <div class="col">
+                            <div class="radio-btn-group">
+                                <label for="AM">
+                                    AM 
+                                    <input formControlName="trainingMeridiem" type="radio" id="AM" name="trainingMeridiem" value="AM"/>
+                                </label>  
+                                <label for="PM">
+                                    PM 
+                                    <input formController="trainingMeridiem" type="radio" id="PM" name="trainingMeridiem" value="PM"/>
+                                </label>   
+                            </div> 
+                        </div>
+                    </div>
+                </div>    
+            
+                <div class="form-row">
+                    <label>Training Room: <span class="mandatory">*</span></label>
+                    <input class="sm" type="number" formControlName="trainingRoom" placeholder="Room number 5" required>
+                </div>        
+                
+            
+                <button type="submit" (click)="createTrainingForm.reset()">Reset</button>
+                <button [routerLink]="'/view-all'" type="submit">Cancel</button>
+                <button type="submit" [disabled]='createTrainingForm.invalid'>Create</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+  
