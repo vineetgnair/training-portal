@@ -1,0 +1,193 @@
+/* You can add global styles to this file, and also import other style files */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+html {
+    font-size: 16px;
+}
+table {
+    width: 100%;
+	border-collapse: collapse;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: 1px solid #dddddd;
+}
+table th,
+table td {
+    padding: 15px;
+}
+table thead {
+  background-color: #ededed;
+}
+table th {
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid #dddddd;
+}
+
+table td  {
+    text-align: left;
+    color: #2c3e50;
+    font-size: 14px;
+    border: 1px solid #dddddd;
+}
+table tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+h1 {
+    font-size: 1.5rem;
+}
+h2 {
+    font-size: 1.25rem; 
+}
+h3 {
+    font-size: 1.125rem;
+}
+h4 {
+    font-size: 1rem;
+}
+h5 {
+    font-size: 0.875rem;
+}
+h6 {
+    font-size: 0.75rem;
+}
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.row {
+    margin: 10px auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+input[type=text],
+input[type=number],
+input[type=date],
+textarea
+{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    display: inline-block;
+}
+input.sm {
+    max-width: 180px;
+}
+form {
+    width: 100%;
+    margin: 0 auto;
+}
+form.md {
+    width: 50%;
+}
+.form-row {
+    width: 100%;
+    margin: 10px auto;
+}
+.flex-box{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+label {
+    width: 100%;
+    color: #5f5f5f;
+    display: inline-block;
+}
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    opacity: .8;
+  }
+  button[disabled] {
+    background-color: #c6c6c6;
+    cursor: default;
+  }
+  button {
+      opacity: 1;
+  }
+  .wrapper {
+      width: 100%;
+  }
+  .md{
+      width: 50%;
+      margin: 0 auto;
+  }
+  .button2 {background-color: #008CBA;} /* Blue */
+  .button3 {background-color: #f44336;} /* Red */ 
+  .button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+  .button5 {background-color: #c6c6c6;} /* Black */  
+
+  .mandatory {
+      color: red;
+  }
+  .heading {
+      padding: 25px auto;
+  }
+
+
+
+
+
+
