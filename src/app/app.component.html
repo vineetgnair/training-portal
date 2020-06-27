@@ -1,0 +1,5 @@
+<div *ngIf="router.url == '/'" class="container">
+    <h1>Welcome to Training Portal</h1>
+    <button [routerLink]="'/view-all'" >view all sessions</button>
+</div>
+<router-outlet></router-outlet>

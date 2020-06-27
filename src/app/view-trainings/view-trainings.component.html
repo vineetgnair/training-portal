@@ -1,0 +1,38 @@
+<div class="container">
+    <h1>scheduled trainings</h1>
+    <div class="row">
+        <div class="col">
+            <input type="text" [(ngModel)]="searchTraining" placeholder="&#61442;  Start searching for a training"/>
+        </div>
+        <div class="col">
+            <button [routerLink]="'/create'">schedule a new training</button>
+        </div>
+    </div>
+    <div class="row">
+        <table class="view-all-trainings">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>desciption</th>
+                    <th>date</th>
+                    <th>time</th>
+                    <th>room</th>
+                </tr>
+            </thead>    
+            <tbody>
+                <tr *ngFor="let schedule of schedules">
+                    <td>
+                        <a (click)="viewDetails(schedule.id)">{{schedule.name}}</a>
+                    </td>
+                    <td>{{schedule.description}}</td>
+                    <td>{{schedule.department}}</td>
+                    <td>{{schedule.dateTime}}</td>
+                    <td>{{schedule.meetingRoom}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>    
+    
+</div>    
+
+
