@@ -1,0 +1,40 @@
+{
+    "schedules": [
+        {
+            "id": "tr-01",
+            "name": "Donec ut ornare odio",
+            "description": "Nullam sollicitudin, dolor vel rutrum fringilla, dui arcu lacinia nibh, nec luctus enim tellus a quam.",
+            "department": "hr",
+            "duration": "1 hours",
+            "dateTime": "Jun 23, 2020, 12:55 PM",
+            "meetingRoom": "2"
+        },
+        {
+            "id": "tr-02",
+            "name": "Mauris hendrerit sapien et mi tempus",
+            "description": "Quisque quis lacus est. Ut rhoncus venenatis tempus. Pellentesque sit amet dui vel nibh porta tincidunt a et felis.",
+            "department": "engineering",
+            "duration": "3 hours 34 minutes",
+            "dateTime": "Jun 24, 2020, 3:15 PM",
+            "meetingRoom": "4"
+        },
+        {
+            "id": "tr-03",
+            "name": "Cras pulvinar massa",
+            "description": "Quisque eget sollicitudin urna. Donec vitae tristique nulla. Vivamus nec pretium urna.",
+            "department": "accounts",
+            "duration": "2 hours 45 minutes",
+            "dateTime": "Jun 24, 2020, 3:15 PM",
+            "meetingRoom": "5"
+        },
+        {
+            "id": "tr-04",
+            "name": "In magna tortor",
+            "description": "Duis elementum ornare risus quis dignissim.",
+            "department": "engineering",
+            "duration": "1 hours",
+            "dateTime": "Jun 30, 2020, 10:00 AM",
+            "meetingRoom": "1"
+        }
+    ]
+}
