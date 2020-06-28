@@ -101,7 +101,7 @@ h6 {
 .container {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 5% auto;
 }
 .row {
     margin: 10px auto;
@@ -115,7 +115,7 @@ input[type=date],
 textarea
 {
     width: 100%;
-    padding: 12px 20px;
+    padding: 15px 20px;
     margin: 8px 0;
     box-sizing: border-box;
     border: 1px solid #cccccc;
@@ -140,6 +140,9 @@ form.md {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+}
+.flex-justify-end {
+    justify-content: flex-end;
 }
 label {
     width: 100%;
@@ -185,7 +188,9 @@ button {
   .heading {
       padding: 25px auto;
   }
-
+  .mr-1 {
+      margin-right: 1%;
+  }
 
 
 
