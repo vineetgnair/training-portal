@@ -1,28 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-import { TrainingServiceService } from '../training-service.service';
+import { Schedule, TrainingServiceService } from '../training-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
-//import { filter } from 'rxjs/operators';
 
-
-interface Schedule {
-  id: string,
-  name: string,
-  description: string,
-  department: string,
-  duration: string,
-  dateTime: string,
-  meetingRoom: string
-}
 
 @Component({
   selector: 'app-create-trainings',
   templateUrl: './create-trainings.component.html',
   styleUrls: ['./create-trainings.component.css']
 })
+
 export class CreateTrainingsComponent implements OnInit {
-  trainingID: string;
   newTrainingObject: Schedule; 
+
   trainingDetailsObject = {
     id: "",
     trainingName: "",
@@ -36,8 +26,8 @@ export class CreateTrainingsComponent implements OnInit {
     trainingMeridiem: "",
     trainingRoom: ""
   };  
-  createTraining: boolean = false;
-  allTrainings;
+
+  allTrainings: Schedule[];
   trainingForm;
   queryParameters = {
     "mode": "",
@@ -62,9 +52,6 @@ export class CreateTrainingsComponent implements OnInit {
     });
 
   }
-  
-
-
 
   ngOnInit() {
     this.activatedRoute.queryParams.subscribe(params => {
@@ -74,10 +61,9 @@ export class CreateTrainingsComponent implements OnInit {
       } else {
         this.queryParameters.id = params.trainingId;
       }
-      //this.trainingID = params.trainingId
 
-      if(this.queryParameters.id !== "") {
-        let currentSchedule = this.getCurrentTraining();
+      if(this.queryParameters.mode !== 'create') {
+        this.getCurrentTraining();
         this.trainingForm.setValue({
           trainingName: this.trainingDetailsObject.trainingName,
           trainingDescription: this.trainingDetailsObject.trainingDescription,
@@ -100,7 +86,7 @@ export class CreateTrainingsComponent implements OnInit {
   }
 
   getTrainingDateTime(){
-    console.log('datepicker value ', this.trainingForm.value.trainingDate)
+    //console.log('datepicker value ', this.trainingForm.value.trainingDate)
     return `${this.trainingForm.value.trainingDate}, ${this.trainingForm.value.trainingStartHours}:${this.trainingForm.value.trainingStartMinutes} ${this.trainingForm.value.trainingMeridiem}`
   }
 
@@ -113,7 +99,7 @@ export class CreateTrainingsComponent implements OnInit {
       return item['id'] == this.queryParameters.id
     })
     
-    this.trainingDetailsObject = {
+    return this.trainingDetailsObject = {
       id: currentTrainingItem.id,
       trainingName: currentTrainingItem.name,
       trainingDescription: currentTrainingItem.description,
@@ -140,7 +126,7 @@ export class CreateTrainingsComponent implements OnInit {
       this.newTrainingObject = {
         id: objectId,
         name: this.trainingForm.value.trainingName,
-        description: this.trainingForm.value.trainingDescription,
+        description: this.trainingForm.value.trainingDescription || 'No description added',
         department: this.trainingForm.value.trainingDept,
         duration: trainingDuration,
         dateTime: trainingDateTime,

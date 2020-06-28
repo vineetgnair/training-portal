@@ -61,7 +61,7 @@
                             <div class="radio-btn-group">
                                 <label for="AM">
                                     AM 
-                                    <input formControlName="trainingMeridiem" type="radio" id="AM" name="trainingMeridiem" value="AM" checked/>
+                                    <input formControlName="trainingMeridiem" type="radio" id="AM" name="trainingMeridiem" value="AM"/>
                                 </label>  
                                 <label for="PM">
                                     PM 
@@ -79,7 +79,7 @@
                 
             
                 <button type="submit" (click)="trainingForm.reset()">Reset</button>
-                <button [routerLink]="'/view-all'" type="submit">Cancel</button>
+                <button [routerLink]="'/view-all'" type="submit">Back</button>
                 <button type="submit" [disabled]='trainingForm.invalid'>Submit</button>
             </form>
         </div>
