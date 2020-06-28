@@ -105,7 +105,7 @@ export class CreateTrainingsComponent implements OnInit {
       trainingDescription: currentTrainingItem.description,
       trainingDept: currentTrainingItem.department,
       trainingDurationHours: currentTrainingItem.duration.match(/\d+/g)[0],
-      trainingDurationMinutes: currentTrainingItem.duration.match(/\d+/g)[1],
+      trainingDurationMinutes: currentTrainingItem.duration.match(/\d+/g)[1] ? currentTrainingItem.duration.match(/\d+/g)[1] : "0",
       trainingDate: currentTrainingItem.dateTime.split(',')[0],
       trainingStartHours: currentTrainingItem.dateTime.split(',')[1].trim().split(' ')[0].split(':')[0],
       trainingStartMinutes: currentTrainingItem.dateTime.split(',')[1].trim().split(' ')[0].split(':')[1],
