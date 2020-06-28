@@ -8,12 +8,16 @@ import { ViewTrainingsComponent } from './view-trainings/view-trainings.componen
 import { HttpClientModule } from "@angular/common/http"
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CreateTrainingsComponent } from './create-trainings/create-trainings.component';
+import { SearchFilterPipe } from './search-filter.pipe';
+import { HighlightSearchPipe } from './highlight-search.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewTrainingsComponent,
-    CreateTrainingsComponent
+    CreateTrainingsComponent,
+    SearchFilterPipe,
+    HighlightSearchPipe
   ],
   imports: [
     BrowserModule,

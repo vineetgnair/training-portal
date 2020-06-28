@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-interface Schedule {
+export interface Schedule {
+  id: string,
   name: string,
   description: string,
   department: string,
@@ -20,16 +21,32 @@ export class TrainingServiceService {
   private _mockDataUrl = './assets/mock-data.json';
 
   constructor(private httpClient: HttpClient) {
+    this.fetchData();
+  }
+  fetchData(){
     this.getJSON().subscribe(data => {
       this.trainingCollection = data.schedules;
     })
   }
-
+  
   getJSON() :Observable<any>{
     return this.httpClient.get(this._mockDataUrl)
   }
 
-  formateDate(){
-    
+  public getAllTraining(){
+    return this.trainingCollection;
+  }
+
+  createTraining(object){
+    this.trainingCollection.push(object)
+  }
+
+  updateTraining(object){
+    var filtered = this.trainingCollection.filter((item) => {
+      return item.id !== object.id
+    })
+    filtered.push(object);
+    this.trainingCollection = [];
+    this.trainingCollection = filtered;
   }
 }

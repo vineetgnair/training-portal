@@ -5,6 +5,7 @@ import { ViewTrainingsComponent } from './view-trainings/view-trainings.componen
 import { CreateTrainingsComponent } from './create-trainings/create-trainings.component';
 
 const routes: Routes = [
+  // { path: "", component: AppComponent },
   { path: 'create', component: CreateTrainingsComponent },
   { path: 'view-all', component: ViewTrainingsComponent },
   { path: 'view-details', component: CreateTrainingsComponent }
