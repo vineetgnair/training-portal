@@ -1,11 +1,11 @@
 <div class="container">
-    <h1>scheduled trainings</h1>
-    <div class="row">
-        <div class="col">
-            <input type="text" [(ngModel)]="searchTraining" placeholder="&#61442;  Start searching for a training"/>
+    <h1>{{pageTitle}}</h1>
+    <div class="row flex flex-justify-end">
+        <div class="col search-box-wrapper mr-1">
+            <input type="text" [(ngModel)]="searchTraining" placeholder="&#128270; Start searching for a training"/>
         </div>
         <div class="col">
-            <button [routerLink]="'/create'">schedule a new training</button>
+            <button [routerLink]="'/create'" [queryParams]="{mode: 'create'}">New Training</button>
         </div>
     </div>
     <div class="row">

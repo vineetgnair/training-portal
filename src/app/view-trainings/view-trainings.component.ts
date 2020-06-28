@@ -11,7 +11,7 @@ import { TrainingServiceService } from '../training-service.service'
 })
 export class ViewTrainingsComponent implements OnInit {
   
-  //private _mockDataUrl = './assets/mock-data.json';
+  pageTitle: string = "View all Training" 
   schedules;
   searchTraining: string = "";
   scheduleDetails;

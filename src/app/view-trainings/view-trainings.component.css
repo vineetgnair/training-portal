@@ -23,8 +23,6 @@ table.view-all-trainings tbody tr td:nth-child(5)
 {
     width: 5%;
 }
-/* table.view-all-trainings tbody tr td:nth-child(3),
-table.view-all-trainings tbody tr td:nth-child(5)
-{
-    text-align: center;
-} */
+.search-box-wrapper {
+    width: 40%;
+}
