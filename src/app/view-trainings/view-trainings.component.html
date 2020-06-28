@@ -2,7 +2,7 @@
     <h1>{{pageTitle}}</h1>
     <div class="row flex flex-justify-end">
         <div class="col search-box-wrapper mr-1">
-            <input type="text" [(ngModel)]="searchTraining" placeholder="&#128270; Start searching for a training"/>
+            <input type="text" [(ngModel)]="searchTraining" placeholder="Enter program name"/>
         </div>
         <div class="col">
             <button [routerLink]="'/create'" [queryParams]="{mode: 'create'}">New Training</button>
@@ -14,19 +14,21 @@
                 <tr>
                     <th>name</th>
                     <th>desciption</th>
-                    <th>date</th>
-                    <th>time</th>
+                    <th>Department</th>
+                    <th>Date & Time</th>
+                    <th>Duration</th>
                     <th>room</th>
                 </tr>
-            </thead>    
+            </thead>   
             <tbody>
-                <tr *ngFor="let schedule of schedules">
+                <tr *ngFor="let schedule of schedules | searchFilter: searchTraining">
                     <td>
-                        <a (click)="viewDetails(schedule.id)">{{schedule.name}}</a>
+                        <a (click)="viewDetails(schedule.id)" innerHTML="{{ schedule.name | highlightSearch: searchTraining }}"></a>
                     </td>
                     <td>{{schedule.description}}</td>
                     <td>{{schedule.department}}</td>
                     <td>{{schedule.dateTime}}</td>
+                    <td>{{schedule.duration}}</td>
                     <td>{{schedule.meetingRoom}}</td>
                 </tr>
             </tbody>

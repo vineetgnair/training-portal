@@ -2,7 +2,8 @@ import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
-import { TrainingServiceService } from '../training-service.service'
+import { TrainingServiceService } from '../training-service.service';
+import { SearchFilterPipe } from '../search-filter.pipe'
 
 @Component({
   selector: 'app-view-trainings',
@@ -16,13 +17,21 @@ export class ViewTrainingsComponent implements OnInit {
   searchTraining: string = "";
   scheduleDetails;
 
+
   constructor(private router: Router, private service: TrainingServiceService) {
     
   }
 
   ngOnInit() {
-    this.schedules = this.service.trainingCollection;
-    
+    if(this.service.trainingCollection === undefined) {
+      this.service.trainingCollection = [];
+      this.service.getJSON().subscribe(data => {
+        this.service.trainingCollection = data.schedules;
+        this.schedules = this.service.trainingCollection;
+      })
+    } else {
+      this.schedules = this.service.trainingCollection;
+    }
   }
 
   viewDetails(id){
